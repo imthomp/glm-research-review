@@ -120,3 +120,7 @@ pytest --cov=glm_review --cov-report=term-missing
 ## Public-release notes
 
 Model weights, unpublished manuscripts, generated reviews, SLURM logs, node names, user-specific filesystem paths, and credentials are intentionally excluded. Download GLM weights from the model provider under the applicable model license.
+
+## License
+
+The orchestration code in this repository is released under the MIT License. Model weights remain subject to their provider's license.
