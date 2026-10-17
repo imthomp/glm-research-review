@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "glm-research-review"
+version = "0.1.0"
+description = "Resumable multi-persona review and research red-teaming with self-hosted GLM models"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov>=5"]
+
+[project.scripts]
+glm-review = "glm_review.review:main"
+glm-red-team = "glm_review.red_team:main"
+glm-synthesize = "glm_review.synthesis:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=glm-review
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --time=12:00:00
+#SBATCH --output=logs/review-%j.out
+#SBATCH --error=logs/review-%j.err
+
+set -euo pipefail
+
+SERVER_NODE_FILE=${SERVER_NODE_FILE:-server_node.txt}
+PORT=${PORT:-8000}
+export GLM_BASE_URL="http://$(<"$SERVER_NODE_FILE"):${PORT}"
+export GLM_MODEL=${GLM_MODEL:-glm-5.3}
+
+glm-review --papers papers.local.json --output outputs/reviews --wait

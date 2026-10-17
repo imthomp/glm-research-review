@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+.env
+
+# Large or generated artifacts
+weights/
+models/
+logs/
+outputs/
+*.safetensors
+*.bin
+*.pt
+*.pth
+server_node.txt
+
+# Local inputs may contain unpublished manuscripts
+papers.local.json
+questions.local.json
